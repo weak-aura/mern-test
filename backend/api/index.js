@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/post", postRoutes)
-
+module.exports = app;
 
 runMongoDB(process.env.MONGODB_URI)
   .then(() => {
