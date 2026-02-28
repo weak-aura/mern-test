@@ -77,7 +77,7 @@ const verification = async (req, res) => {
     }
   } catch (error) {
     console.log("Error in verification: ", error.message)
-    res.status(500).json({error: "Error in verification"})
+    res.status(500).json({error: "Error in verification", message: error.message})
   }
 }
 
