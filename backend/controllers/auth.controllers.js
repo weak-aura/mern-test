@@ -8,6 +8,8 @@ const {
   generateRefreshEmailToken,
 } = require("../utils/generateToken");
 const {initiateUserEmailVerification, InitiatePasswordResetByEmail} = require("../utils/nodemailer");
+
+
 const register = async (req, res) => {
   try {
     const {email, username, password} = req.body
@@ -47,7 +49,8 @@ const register = async (req, res) => {
 
   } catch (error) {
     console.log("Error in register: ", error.message)
-    res.status(500).json({error: "Error in Register"})
+    res.status(500).json({error: "Error in Register", message: error.message})
+    
   }
 }
 
